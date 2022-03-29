@@ -1,0 +1,24 @@
+@import 'mixins';
+
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  background: none;
+  font-weight: bold;
+}
+
+.numInputWrapper span:hover {
+  background: inherit;
+}
+
+.flatpickr-calendar {
+  .flatpickr-days {
+    border: 0;
+  }
+
+  &.hasTime.noCalendar {
+    width: 300px;
+  }
+
+  .flatpickr-weekday {
+    color: $white;
+  }
+}

@@ -1,0 +1,6 @@
+version: "2"
+plugins:
+  fixme:
+    enabled: true
+  markdownlint:
+    enabled: true
