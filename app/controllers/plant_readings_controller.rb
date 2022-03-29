@@ -32,6 +32,7 @@ class PlantReadingsController < ApplicationController
     @plant_reading = authorize @plant.plant_readings.find(params[:id])
   end
 
+  # :reek:DuplicateMethodCall
   def set_plant
     @plant = if params[:api_key]
                Plant.find_by(api_key: params[:api_key])
