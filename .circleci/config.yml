@@ -373,6 +373,6 @@ workflows:
       - eslint
       - scss-lint
       - fasterer
-      # - upload-codeclimate-coverage:
-      #     requires:
-      #       - rspec
+      - upload-codeclimate-coverage:
+          requires:
+            - rspec
