@@ -1,8 +1,4 @@
-# davedkg-rails-template
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/7703a00ebe9661c4685c/maintainability)](https://codeclimate.com/github/davedkg/davedkg-rails-template/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/7703a00ebe9661c4685c/test_coverage)](https://codeclimate.com/github/davedkg/davedkg-rails-template/test_coverage)
-[![CircleCI](https://circleci.com/gh/davedkg/davedkg-rails-template/tree/master.svg?style=shield)](https://circleci.com/gh/davedkg/davedkg-rails-template/tree/master)
+# davedkg-rails-plantmonitor
 
 ## Local Setup
 
@@ -55,18 +51,6 @@ rails g request_specs Object
 | --- | --- |
 | user@example.com | users_password123 |
 | admin@example.com | admins_password123 |
-
-## Rebrand App
-
-| File | Change |
-| --- | --- |
-| .circleci/config.yml | database name |
-| config/initializers/constants.rb | PLATFORM_NAME |
-| config/application.rb | Rails::Application module name |
-| config/database.yml | database names |
-| .ruby-gemset | gemset name |
-| README.md | project title |
-| app.json | name, description, reposiitory |
 
 ## Merge Template Updates
 

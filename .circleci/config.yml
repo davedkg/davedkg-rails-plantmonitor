@@ -16,7 +16,7 @@ jobs:
           TEST_REDIS_PORT: 6379
       - image: circleci/postgres:10-postgis-ram
         environment:
-          POSTGRES_DB: davedkg_template_test
+          POSTGRES_DB: davedkg_plantmonitor_test
           POSTGRES_PASSWORD: ""
           POSTGRES_USER: db_user
           POSTGRES_HOST_AUTH_METHOD: trust
@@ -373,6 +373,6 @@ workflows:
       - eslint
       - scss-lint
       - fasterer
-      - upload-codeclimate-coverage:
-          requires:
-            - rspec
+      # - upload-codeclimate-coverage:
+      #     requires:
+      #       - rspec
