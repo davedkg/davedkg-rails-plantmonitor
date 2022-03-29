@@ -4,6 +4,7 @@ class CreatePlants < ActiveRecord::Migration[6.1]
       t.bigint :user_id, null: false
       t.string :name, null: false
       t.string :api_key, null: false
+      t.datetime :last_seen_at, precision: 6
       t.datetime :deleted_at, precision: 6
       t.timestamps
     end

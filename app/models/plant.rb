@@ -2,6 +2,7 @@
 
 class Plant < ApplicationRecord
   belongs_to :user
+  has_many :plant_readings, dependent: :destroy
 
   validates :name, presence: true
 

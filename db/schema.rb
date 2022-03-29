@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_29_010531) do
+ActiveRecord::Schema.define(version: 2022_03_29_023256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,10 +56,22 @@ ActiveRecord::Schema.define(version: 2022_03_29_010531) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "plant_readings", force: :cascade do |t|
+    t.bigint "plant_id", null: false
+    t.decimal "soil_moisture_capacitance"
+    t.decimal "humidity"
+    t.decimal "temperature"
+    t.datetime "deleted_at", precision: 6
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at", "plant_id", "created_at"], name: "index_plant_readings_on_deleted_at_and_plant_id_and_created_at"
+  end
+
   create_table "plants", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name", null: false
     t.string "api_key", null: false
+    t.datetime "last_seen_at", precision: 6
     t.datetime "deleted_at", precision: 6
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
