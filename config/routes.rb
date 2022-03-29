@@ -3,6 +3,8 @@
 Rails.application.routes.draw do
 
   post 'plant-readings', to: "plant_readings#create"
+  get 'ping', to: "application#ping"
+
   resources :plants
   resource :dashboard, only: [ :show ], controller: :dashboard
 
