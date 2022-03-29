@@ -1,7 +1,7 @@
 # davedkg-rails-plantmonitor
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/9cb9cfd4dc458093c880/maintainability)](https://codeclimate.com/github/davedkg/davedkg-rails-plantmonitor/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/9cb9cfd4dc458093c880/test_coverage)](https://codeclimate.com/github/davedkg/davedkg-rails-plantmonitor/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5c6146332180210c38c8/maintainability)](https://codeclimate.com/github/davedkg/davedkg-rails-plantmonitor/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5c6146332180210c38c8/test_coverage)](https://codeclimate.com/github/davedkg/davedkg-rails-plantmonitor/test_coverage)
 [![CircleCI](https://circleci.com/gh/davedkg/davedkg-rails-plantmonitor/tree/master.svg?style=shield)](https://circleci.com/gh/davedkg/davedkg-rails-plantmonitor/tree/master)
 
 ## Local Setup
