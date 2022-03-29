@@ -8,6 +8,6 @@ class CreatePlants < ActiveRecord::Migration[6.1]
       t.datetime :deleted_at, precision: 6
       t.timestamps
     end
-    add_index :plants, :deleted_at
+    add_index :plants, [:deleted_at, :api_key]
   end
 end

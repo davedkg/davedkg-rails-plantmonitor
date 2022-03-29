@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
 
+  post 'plant-readings', to: "plant_readings#create"
   resources :plants
   resource :dashboard, only: [ :show ], controller: :dashboard
 
