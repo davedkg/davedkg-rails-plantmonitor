@@ -40,7 +40,7 @@ class User < ApplicationRecord
   ## *** Devise Overrides
 
   def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, id, *args).deliver_later
+    devise_mailer.send(notification, id, *args).deliver_now
   end
 
   def active_for_authentication?
