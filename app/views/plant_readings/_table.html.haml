@@ -1,0 +1,12 @@
+%table.table.table-striped.mb-0
+  %thead
+    %tr
+      %th Time
+      %th Temperature
+      %th Humidity
+      %th Moisture
+      %th &nbsp;
+  %tbody{ id: "plant-readings-body" }
+    = render 'plant_readings/table_rows'
+%div{ id: "plant-readings-paginator" }
+  = render "plant_readings/paginator"

@@ -1,0 +1,5 @@
+.mt-4
+  .text-center
+    = page_entries_info @plant_readings
+  .mt-4
+    = paginate @plant_readings, remote: true, params: {controller: :plant_readings, action: :index, plant_id: @plant.id}

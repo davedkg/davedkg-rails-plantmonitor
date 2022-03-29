@@ -1,0 +1,8 @@
+- @plant_readings.each do |plant_reading|
+  %tr
+    %td= format_date_time(plant_reading.created_at)
+    %td= "#{plant_reading.temperature} C"
+    %td= "#{plant_reading.humidity}%"
+    %td= "#{plant_reading.soil_moisture_capacitance}%"
+    %td.text-right
+      &nbsp;

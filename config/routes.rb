@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   post 'plant-readings', to: "plant_readings#create"
   get 'ping', to: "application#ping"
 
-  resources :plants
+  resources :plants do
+    resources :plant_readings, only: [:index, :destroy], path: :readings
+  end
   resource :dashboard, only: [ :show ], controller: :dashboard
 
   resources :users do

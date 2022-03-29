@@ -3,6 +3,10 @@
 class PlantReadingsController < ApplicationController
   before_action :set_plant
 
+  def index
+    @plant_readings = authorize @plant.plant_readings.page(params[:page])
+  end
+
   def create
     @plant_reading = authorize PlantReading.new
     @plant_reading.attributes = permitted_attributes(@plant_reading)

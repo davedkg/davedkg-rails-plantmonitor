@@ -12,7 +12,9 @@ class PlantsController < ApplicationController
     @plants = authorize policy_scope(Plant).includes(:user).page(params[:page])
   end
 
-  def show; end
+  def show
+    @plant_readings = @plant.plant_readings.page(0)
+  end
 
   def edit; end
 
