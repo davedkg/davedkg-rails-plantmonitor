@@ -18,6 +18,7 @@ class User < ApplicationRecord
   attr_accessor :skip_password_validation
 
   has_one_attached :avatar
+  has_many :plants, dependent: :destroy
 
   validates :name,      presence: true, uniqueness: { case_sensitive: false }, on: :update
   validates :time_zone, presence: true, time_zone: true

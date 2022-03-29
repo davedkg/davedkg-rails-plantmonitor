@@ -21,6 +21,11 @@
           = link_to dashboard_path do
             %i.fa.fa-tachometer-alt
             Dashboard
+      - if policy(Plant).index?
+        %li{ class: active_sidebar_tab_for_path(plants_path) }
+          = link_to plants_path do
+            %i.fa.fa-leaf
+            Plants
       - if policy(User).index?
         %li{ class: active_sidebar_tab_for_path(users_path) }
           = link_to users_path do

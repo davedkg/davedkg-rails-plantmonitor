@@ -1,0 +1,9 @@
+- @plants.each do |plant|
+  %tr
+    %td= plant.name
+    %td.text-right
+      - if policy(plant).show?
+        = link_to plant_path(plant), class: "btn btn-outline-secondary btn-sm" do
+          %i.fa.fa-eye
+          .d-none.d-sm-inline
+            Show

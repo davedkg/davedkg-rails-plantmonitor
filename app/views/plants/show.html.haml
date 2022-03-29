@@ -1,0 +1,29 @@
+.content__inner.content__inner--sm
+  %header.content__title
+    %h1
+      = page_title
+    %small TODO
+
+    .actions
+      - if policy(@plant).edit?
+        = link_to edit_plant_path(@plant), class: "btn btn-outline-secondary btn-sm mr-2" do
+          %i.fa.fa-edit
+          .d-none.d-md-inline
+            Edit
+      - if policy(@plant).destroy?
+        = link_to @plant, class: "btn btn-outline-danger btn-sm", data: { method: :delete, confirm: "Are you sure you want to delete this plant?" } do
+          %i.fa.fa-trash
+          .d-none.d-md-inline
+            Delete
+
+  .tab-container
+    %ul.nav.nav-tabs{:role => "tablist", style: 'background-color:white;padding:0.5rem 1rem 2px' }
+      - if current_user == @plant.user
+        %li.nav-item
+          %a.nav-link.active{"data-toggle" => "tab", href: "#settings", role: "tab"} Settings
+
+    .tab-content
+      - if current_user == @plant.user
+        #settings.tab-pane.active.fade.show{:role => "tabpanel"}
+          = render 'settings'
+

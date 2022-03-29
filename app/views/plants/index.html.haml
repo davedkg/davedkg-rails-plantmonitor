@@ -1,0 +1,20 @@
+%header.content__title
+  %h1= page_title
+  .actions
+    - if policy(Plant).new?
+      %a.btn.btn-outline-primary{ href: new_plant_path }
+        %i.fa.fa-plus
+        .d-none.d-sm-inline
+          Plant
+
+.card
+  .card-body
+    %table.table.table-striped.mb-0
+      %thead
+        %tr
+          %th Name
+          %th &nbsp;
+      %tbody{ id: "plants-body" }
+        = render 'table_rows'
+    %div{ id: "plants-paginator" }
+      = render "paginator"

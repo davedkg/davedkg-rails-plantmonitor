@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
 
+  resources :plants
   resource :dashboard, only: [ :show ], controller: :dashboard
 
   resources :users do
