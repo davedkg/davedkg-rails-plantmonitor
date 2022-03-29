@@ -13,7 +13,7 @@ class PlantsController < ApplicationController
   end
 
   def show
-    @plant_readings = @plant.plant_readings.page(0)
+    @plant_readings = @plant.plant_readings.includes(plant: :user).page(0)
   end
 
   def edit; end

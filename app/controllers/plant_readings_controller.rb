@@ -2,9 +2,10 @@
 
 class PlantReadingsController < ApplicationController
   before_action :set_plant
+  before_action :set_plant_reading, except: %i[index create]
 
   def index
-    @plant_readings = authorize @plant.plant_readings.page(params[:page])
+    @plant_readings = authorize @plant.plant_readings.includes(plant: :user).page(params[:page])
   end
 
   def create
@@ -19,7 +20,17 @@ class PlantReadingsController < ApplicationController
     end
   end
 
+  def destroy
+    @plant_reading.destroy
+
+    redirect_to plant_path(@plant), notice: 'Reading was successfully destroyed.'
+  end
+
   private
+
+  def set_plant_reading
+    @plant_reading = authorize @plant.plant_readings.find(params[:id])
+  end
 
   def set_plant
     @plant = if params[:api_key]
