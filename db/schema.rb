@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2022_03_29_023256) do
 
   create_table "plant_readings", force: :cascade do |t|
     t.bigint "plant_id", null: false
-    t.decimal "soil_moisture_capacitance"
+    t.decimal "soil_moisture"
     t.decimal "humidity"
     t.decimal "temperature"
     t.datetime "deleted_at", precision: 6

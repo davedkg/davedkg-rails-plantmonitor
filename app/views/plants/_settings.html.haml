@@ -9,7 +9,8 @@
     %dl
       %dt API Params
       %dd api_key
-      - policy(PlantReading.new).permitted_attributes.map { |attr| "plant_reading[#{attr}]"}.each do |p|
-        %dd= p
+      %dd plant_reading[soil_moisture] as a percent between 0 and 100
+      %dd plant_reading[humidity] as a percent between 0 and 100
+      %dd plant_reading[temperature] in Celsius
 
 

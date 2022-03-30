@@ -10,6 +10,7 @@ describe 'GET plant_path', type: :request do
 
   before do
     sign_in user
+    create(:plant_reading, plant: record)
     subject
   end
 
