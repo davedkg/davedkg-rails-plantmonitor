@@ -3,3 +3,13 @@
     %dl
       %dt API Key
       %dd= @plant.api_key
+    %dl
+      %dt API Endpoint
+      %dd= "POST https://#{APP_DOMAIN}/plant-readings"
+    %dl
+      %dt API Params
+      %dd api_key
+      - policy(PlantReading.new).permitted_attributes.map { |attr| "plant_reading[#{attr}]"}.each do |p|
+        %dd= p
+
+
