@@ -8,13 +8,12 @@
           Plant
 
 .card
-  .card-body
-    %table.table.table-striped.mb-0
-      %thead
-        %tr
-          %th Name
-          %th &nbsp;
-      %tbody{ id: "plants-body" }
-        = render 'table_rows'
-    %div{ id: "plants-paginator" }
-      = render "paginator"
+  %table.table.table-striped.mb-0
+    %thead
+      %tr
+        %th Name
+        %th &nbsp;
+    %tbody{ id: "plants-body" }
+      = render 'table_rows'
+  %div{ id: "plants-paginator" }
+    = render "paginator"
