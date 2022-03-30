@@ -14,7 +14,7 @@ class PlantReadingPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    %i[soil_moisture humidity temperature]
+    %i[soil_moisture humidity temperature raining]
   end
 
   private

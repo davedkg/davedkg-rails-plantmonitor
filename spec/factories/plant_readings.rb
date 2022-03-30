@@ -6,5 +6,6 @@ FactoryBot.define do
     soil_moisture { Faker::Number.number(digits: 3) }
     humidity { Faker::Number.decimal(l_digits: 2, r_digits: 2) }
     temperature { Faker::Number.decimal(l_digits: 2, r_digits: 2) }
+    raining { false }
   end
 end
