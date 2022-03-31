@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
 class PlantReadingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create]
+  skip_before_action :set_time_zone, only: [:create]
+  skip_before_action :set_raven_context, only: [:create]
   before_action :set_plant
   before_action :set_plant_reading, except: %i[index create]
+  skip_before_action :verify_authenticity_token, only: [:create]
 
   def index
     @plant_readings = authorize @plant.plant_readings.includes(plant: :user).page(params[:page])
