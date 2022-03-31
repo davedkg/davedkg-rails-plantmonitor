@@ -48,10 +48,10 @@ Rails.application.configure do
   config.action_cable.allowed_request_origins = ["https://#{AppConfig.app_domain}"]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
   config.ssl_options = {
     redirect: {
-      exclude: -> request { request.path =~ /ping || request.path =~ /plant-readings  }
+      exclude: ->(request) { request.path =~ /ping|plant-readings/ }
     }
   }
 
