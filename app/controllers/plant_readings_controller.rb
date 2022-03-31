@@ -4,8 +4,6 @@ class PlantReadingsController < ApplicationController
   before_action :set_plant
   before_action :set_plant_reading, except: %i[index create]
 
-  force_ssl except: [:create]
-
   def index
     @plant_readings = authorize @plant.plant_readings.includes(plant: :user).page(params[:page])
   end

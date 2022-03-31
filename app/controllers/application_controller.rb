@@ -18,8 +18,6 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   after_action  :verify_authorized, unless: -> { devise_controller? || application_controller? }
 
-  force_ssl except: [:ping]
-
   def ping
     head :no_content
   end
