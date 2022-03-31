@@ -3,7 +3,7 @@
     %h1
       = page_title
     %small
-      last seen at:
+      last seen:
       - if @plant.last_seen_at
         = time_ago_in_words(@plant.last_seen_at, {}) + " ago"
       - else

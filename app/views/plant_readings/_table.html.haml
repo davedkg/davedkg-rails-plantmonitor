@@ -1,11 +1,19 @@
 %table.table.table-striped.mb-0
   %thead
     %tr
-      %th Time
-      %th Temperature
-      %th Humidity
-      %th Moisture
-      %th Raining
+      %th
+        %i.fa.fa-clock
+      %th
+        %i.fa.fa-cloud
+        %i.fa.fa-temperature-high
+      %th
+        %i.fa.fa-cloud
+        %i.fa.fa-droplet
+      %th
+        %i.fa.fa-leaf
+        %i.fa.fa-droplet
+      %th
+        %i.fa.fa-cloud-rain
       %th &nbsp;
   %tbody{ id: "plant-readings-body" }
     = render 'plant_readings/table_rows'
