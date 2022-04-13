@@ -11,7 +11,12 @@ RSpec.describe PlantReadingPolicy, type: :policy do
 
   it { is_expected.to permit_actions(%i[index create]) }
   it { is_expected.to forbid_actions(%i[destroy]) }
-  it { expect(subject).to permit_mass_assignment_of_exactly(%i[soil_moisture humidity temperature raining]) }
+
+  it {
+    expect(subject).to permit_mass_assignment_of_exactly(%i[
+                                                           soil_moisture humidity temperature raining light_intensity
+                                                         ])
+  }
 
   context 'when plant is mine' do
     let(:plant) { create(:plant, user: user) }

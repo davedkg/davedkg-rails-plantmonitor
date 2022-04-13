@@ -4,6 +4,7 @@
     %td= "#{plant_reading.temperature} C"
     %td= "#{plant_reading.humidity}%"
     %td= "#{plant_reading.soil_moisture}%"
+    %td= "#{plant_reading.light_intensity}%"
     %td= plant_reading.raining ? "yes" : "no"
     %td.text-right
       - if policy(plant_reading).destroy?
