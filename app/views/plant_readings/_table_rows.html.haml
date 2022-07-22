@@ -3,9 +3,9 @@
     %td= time_ago_in_words(plant_reading.created_at) + " ago"
     %td= "#{plant_reading.temperature} C"
     %td= "#{plant_reading.humidity}%"
-    %td= "#{plant_reading.soil_moisture}%"
-    %td= "#{plant_reading.light_intensity}%"
-    %td= plant_reading.raining ? "yes" : "no"
+    %td= plant_reading.soil_moisture
+    %td= plant_reading.light_intensity
+    %td= plant_reading.rain_moisture
     %td.text-right
       - if policy(plant_reading).destroy?
         = link_to [@plant, plant_reading], class: "btn btn-outline-danger btn-sm", data: { method: :delete, confirm: "Are you sure you want to delete this reading?" } do

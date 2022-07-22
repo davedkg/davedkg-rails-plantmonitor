@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_13_012510) do
+ActiveRecord::Schema.define(version: 2022_07_22_010412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 2022_04_13_012510) do
     t.datetime "deleted_at", precision: 6
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "raining", default: false
     t.decimal "light_intensity", default: "0.0"
+    t.decimal "rain_moisture"
     t.index ["deleted_at", "plant_id", "created_at"], name: "index_plant_readings_on_deleted_at_and_plant_id_and_created_at"
   end
 

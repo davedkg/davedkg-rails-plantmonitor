@@ -7,6 +7,6 @@ FactoryBot.define do
     humidity { Faker::Number.decimal(l_digits: 2, r_digits: 2) }
     temperature { Faker::Number.decimal(l_digits: 2, r_digits: 2) }
     light_intensity { Faker::Number.decimal(l_digits: 2, r_digits: 2) }
-    raining { false }
+    rain_moisture { Faker::Number.decimal(l_digits: 2, r_digits: 2) }
   end
 end
