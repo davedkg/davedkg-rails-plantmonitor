@@ -59,6 +59,9 @@ Lint/StructNewOverride:
 Lint/RaiseException:
   Enabled: true
 
+Metrics/AbcSize:
+  Enabled: false
+
 Metrics/BlockLength:
   Enabled: false
 

@@ -20,4 +20,23 @@ class Seeder
       role: (user_json['role'] || User.roles[:user])
     )
   end
+
+  def self.create_readings_for_user(user)
+    plant = Plant.create(name: 'Plant 1', user: user)
+    current_time = Time.zone.now
+    start_time = current_time - 30.days
+
+    while current_time > start_time
+      plant_reading = PlantReading.new(plant: plant)
+      plant_reading.soil_moisture = rand(500...900)
+      plant_reading.humidity = rand(20.0...99.9).round(1)
+      plant_reading.temperature = rand(16.0...35.0).round(1)
+      plant_reading.light_intensity = rand(200...1000)
+      plant_reading.rain_moisture = rand(500...1000)
+      plant_reading.created_at = current_time
+      plant_reading.save
+
+      current_time -= 15.minutes
+    end
+  end
 end
