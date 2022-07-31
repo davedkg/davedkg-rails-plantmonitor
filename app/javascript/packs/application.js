@@ -12,6 +12,7 @@ require("trix")
 require("jquery.scrollbar")
 require("jquery-scrollLock.min")
 require("material")
+require("highcharts/highcharts")
 
 import "@hotwired/turbo-rails"
 import "controllers"

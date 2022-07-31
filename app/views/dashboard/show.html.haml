@@ -11,3 +11,12 @@
         .quick-stats__info
           %h2= "#{number_with_delimiter ApplicationRecord.rows_count} of #{number_with_delimiter HEROKU_ROWS_COUNT}"
           %small Database Rows
+
+
+.row
+  - @plants.each do |plant|
+    .col-md-12.col-lg-6
+      .card
+        .card-body
+          .card-title= plant.name
+          = plant_readings_24_hour_chart(plant)
