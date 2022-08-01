@@ -3,7 +3,7 @@
 module PlantReadingsHelper
   def plant_readings_24_hour_chart(plant)
     end_time = Time.zone.now
-    start_time = end_time - 24.hours
+    start_time = end_time - 23.hours
     plant_readings = plant.plant_readings.unscope(:order).group_by_hour(:created_at, range: start_time..end_time)
 
     data = {}
