@@ -14,6 +14,11 @@ class PlantsController < ApplicationController
 
   def show
     @plant_readings = @plant.plant_readings.includes(plant: :user).page(0)
+
+    end_time = Time.zone.now
+    start_time = Time.zone.now - 27.days
+    @hourly_plant_readings = @plant.plant_readings.unscope(:order).group_by_hour_of_day(:created_at, range: start_time..end_time)
+    @daily_plant_readings = @plant.plant_readings.unscope(:order).group_by_day(:created_at, range: start_time..end_time)
   end
 
   def edit; end

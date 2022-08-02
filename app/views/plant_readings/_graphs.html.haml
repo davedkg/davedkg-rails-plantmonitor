@@ -1,0 +1,11 @@
+.card
+  .card-body
+    .card-title By Hour
+    .card-subtitle Last 28 Days
+    = plant_readings_graph(@hourly_plant_readings)
+
+.card
+  .card-body
+    .card-title By Day
+    .card-subtitle Last 28 Days
+    = plant_readings_graph(@daily_plant_readings)
