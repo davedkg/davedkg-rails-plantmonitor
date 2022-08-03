@@ -24,13 +24,17 @@
   .tab-container
     %ul.nav.nav-tabs{:role => "tablist", style: 'background-color:white;padding:0.5rem 1rem 2px' }
       %li.nav-item
-        %a.nav-link.active{"data-toggle" => "tab", href: "#plant-readings", role: "tab"} Readings
+        %a.nav-link.active{"data-toggle" => "tab", href: "#graphs", role: "tab"} Graphs
+      %li.nav-item
+        %a.nav-link{"data-toggle" => "tab", href: "#plant-readings", role: "tab"} Readings
       - if current_user == @plant.user
         %li.nav-item
           %a.nav-link{"data-toggle" => "tab", href: "#settings", role: "tab"} Settings
 
     .tab-content
-      #plant-readings.tab-pane.active.fade.show{:role => "tabpanel"}
+      #graphs.tab-pane.active.fade.show{:role => "tabpanel"}
+        = render 'plant_readings/graphs'
+      #plant-readings.tab-pane.fade{:role => "tabpanel"}
         .card
           = render 'plant_readings/table'
       - if current_user == @plant.user

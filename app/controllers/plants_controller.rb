@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# :reek:TooManyInstanceVariables
 class PlantsController < ApplicationController
   before_action :set_plant, except: %i[index new create]
 
@@ -12,8 +13,14 @@ class PlantsController < ApplicationController
     @plants = authorize policy_scope(Plant).includes(:user).page(params[:page])
   end
 
+  # :reek:DuplicateMethodCall
   def show
     @plant_readings = @plant.plant_readings.includes(plant: :user).page(0)
+
+    end_time = Time.zone.now
+    start_time = Time.zone.now - 27.days
+    @hourly_plant_readings = @plant.plant_readings.unscope(:order).group_by_hour_of_day(:created_at, range: start_time..end_time)
+    @daily_plant_readings = @plant.plant_readings.unscope(:order).group_by_day(:created_at, range: start_time..end_time)
   end
 
   def edit; end

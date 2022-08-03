@@ -1,11 +1,22 @@
 %header.content__title
   %h1= page_title
 
-.row.quick-stats
-  = quick_stats_chart(User, User.all, "blue")
+- if current_user.admin?
+  .row.quick-stats
+    = quick_stats_chart(PlantReading, PlantReading.unscope(:order), "green")
 
-  .col-sm-6.col-md-3
-    .quick-stats__item.bg-black
-      .quick-stats__info
-        %h2= "#{number_with_delimiter ApplicationRecord.rows_count} of #{number_with_delimiter HEROKU_ROWS_COUNT}"
-        %small Database Rows
+    .col-sm-6.col-md-3
+      .quick-stats__item.bg-black
+        .quick-stats__info
+          %h2= "#{number_with_delimiter ApplicationRecord.rows_count} of #{number_with_delimiter HEROKU_ROWS_COUNT}"
+          %small Database Rows
+
+
+.row
+  - @plants.each do |plant|
+    .col-md-12.col-lg-6
+      .card
+        .card-body
+          .card-title= plant.name
+          .card-subtitle Last 24 Hours
+          = plant_readings_24_hour_graph(plant)

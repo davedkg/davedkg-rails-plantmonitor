@@ -5,6 +5,7 @@ namespace :development do
     require_relative Rails.root.join('lib/seeder.rb')
 
     Seeder.create_users
+    Seeder.create_readings_for_user(User.where(role: :admin).first)
   end
 
   task reset: [

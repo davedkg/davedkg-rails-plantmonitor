@@ -43,6 +43,9 @@ Layout/TrailingWhitespace:
   Enabled: true
   AutoCorrect: true
 
+Layout/LineLength:
+  Enabled: false
+
 Lint/AmbiguousBlockAssociation:
   Exclude:
     - 'spec/requests/**/*'
@@ -58,6 +61,9 @@ Lint/StructNewOverride:
 
 Lint/RaiseException:
   Enabled: true
+
+Metrics/AbcSize:
+  Enabled: false
 
 Metrics/BlockLength:
   Enabled: false
