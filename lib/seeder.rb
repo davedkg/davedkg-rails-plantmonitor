@@ -21,6 +21,7 @@ class Seeder
     )
   end
 
+  # :reek:TooManyStatements
   def self.create_readings_for_user(user)
     plant = Plant.create(name: 'Plant 1', user: user)
     current_time = Time.zone.now

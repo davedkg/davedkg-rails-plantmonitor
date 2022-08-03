@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# :reek:TooManyInstanceVariables
 class PlantsController < ApplicationController
   before_action :set_plant, except: %i[index new create]
 
@@ -12,6 +13,7 @@ class PlantsController < ApplicationController
     @plants = authorize policy_scope(Plant).includes(:user).page(params[:page])
   end
 
+  # :reek:DuplicateMethodCall
   def show
     @plant_readings = @plant.plant_readings.includes(plant: :user).page(0)
 
