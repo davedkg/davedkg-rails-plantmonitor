@@ -20,3 +20,9 @@
           .card-title= plant.name
           .card-subtitle Last 24 Hours
           = plant_readings_24_hour_graph(plant)
+        .card-footer
+          last seen:
+          - if plant.last_seen_at
+            = time_ago_in_words(plant.last_seen_at, {}) + " ago"
+          - else
+            never
